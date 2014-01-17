@@ -16,11 +16,9 @@ namespace UtahPlanners2
             var config = GlobalConfiguration.Configuration;
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "{controller}/{id}", // For some reason this is smart enough to hit the Application/ folder to look for the controller
+                routeTemplate: "api/{controller}/{id}", // For some reason this is smart enough to hit the Application/ folder to look for the controller
                 defaults: new { id = RouteParameter.Optional }
             );
-
-            // TODO: Figure out how to route static file requests to the Presentation/ folder by default
 
             // JSON format by default with XML as an optional format based on header request
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
