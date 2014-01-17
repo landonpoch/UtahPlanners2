@@ -8,8 +8,6 @@ namespace UtahPlanners2.Application
 {
     public class ApplicationMapper
     {
-        #region Queries
-
         public Lookup Convert(Domain.Lookup l)
         {
             return new Lookup
@@ -18,6 +16,20 @@ namespace UtahPlanners2.Application
                 Type = Convert(l.Type),
                 Description = l.Description
             };
+        }
+
+        public Domain.LookupType Convert(LookupType lt)
+        {
+            switch (lt)
+            {
+                case LookupType.Property:
+                    return Domain.LookupType.Property;
+                case LookupType.Street:
+                    return Domain.LookupType.Street;
+                case LookupType.SocioEcon:
+                    return Domain.LookupType.SocioEcon;
+            }
+            throw new Exception("Could not map LookupType to Domain.LookupType");
         }
 
         private LookupType Convert(Domain.LookupType lt)
@@ -33,11 +45,5 @@ namespace UtahPlanners2.Application
             }
             throw new Exception("Could not map Domain.LookupType to Application.LookupType");
         }
-
-        #endregion
-
-        #region Commands
-
-        #endregion
     }
 }
