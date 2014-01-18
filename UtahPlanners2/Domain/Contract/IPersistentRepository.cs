@@ -11,8 +11,7 @@ namespace UtahPlanners2.Domain.Contract
         T Get(Guid id);
         List<T> Find(Func<T, bool> predicate);
 
-        T Create(T aggregate);
-        T Update(Guid id, T aggregate);
+        bool Save(T aggregate);
         bool Delete(Guid id);
     }
 }

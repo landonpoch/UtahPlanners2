@@ -83,6 +83,7 @@
     <Compile Include="Application\Controllers\LookupController.cs" />
     <Compile Include="Application\Models\Commands\CreateLookup.cs" />
     <Compile Include="Application\Models\Commands\CreateWeightedLookup.cs" />
+    <Compile Include="Application\Models\Commands\RenameLookup.cs" />
     <Compile Include="Application\Models\Queries\Lookup.cs" />
     <Compile Include="Domain\Aggregate.cs" />
     <Compile Include="Domain\Contract\IPersistentRepository.cs" />

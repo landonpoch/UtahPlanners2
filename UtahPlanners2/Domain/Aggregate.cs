@@ -8,5 +8,7 @@ namespace UtahPlanners2.Domain
     public abstract class Aggregate
     {
         public Guid Id { get; private set; }
+
+        public int Version { get; internal set; }
     }
 }

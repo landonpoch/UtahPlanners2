@@ -23,6 +23,12 @@ namespace UtahPlanners2.Domain
         public LookupType Type { get; private set; }
 
         public string Description { get; private set; }
+
+        public void Rename(string name)
+        {
+            Description = name;
+            Version++;
+        }
     }
 
     public class WeightedLookup : Lookup

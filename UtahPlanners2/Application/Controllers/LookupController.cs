@@ -15,7 +15,6 @@ namespace UtahPlanners2.Controllers
         private ApplicationMapper _mapper;
         private IPersistentRepository<Domain.Lookup> _lookupRepo;
 
-
         public LookupController()
         {
             _mapper = new ApplicationMapper(); // TODO: Wire up DI
@@ -32,15 +31,32 @@ namespace UtahPlanners2.Controllers
             };
         }
 
-        public bool Put(CreateLookup lookup)
+        public bool Put(CreateLookup createLookup)
+        {
+            return ExecuteUnsafeOperation(createLookup, (resource) =>
+            {
+                var lookupType = _mapper.Convert(resource.Type);
+                var lookup = new Domain.Lookup(lookupType, resource.Description);
+                return _lookupRepo.Save(lookup);
+            });
+        }
+
+        public bool Post(RenameLookup renameLookup)
+        {
+            return ExecuteUnsafeOperation(renameLookup, (resource) =>
+            {
+                var lookup = _lookupRepo.Get(resource.Id);
+                lookup.Rename(resource.Name);
+                return _lookupRepo.Save(lookup);
+            });
+        }
+
+        private bool ExecuteUnsafeOperation<T>(T resource, Func<T, bool> operation)
         {
             bool success = false;
             try
             {
-                var type = _mapper.Convert(lookup.Type);
-                var entity = new Domain.Lookup(type, lookup.Description);
-                _lookupRepo.Create(entity);
-                success = true;
+                success = operation(resource);
             }
             catch (Exception e)
             {
