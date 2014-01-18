@@ -9,6 +9,6 @@ namespace UtahPlanners2.Domain
     {
         public Guid Id { get; private set; }
 
-        public int Version { get; internal set; }
+        public int Version { get; private set; }
     }
 }

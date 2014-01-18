@@ -27,7 +27,6 @@ namespace UtahPlanners2.Domain
         public void Rename(string name)
         {
             Description = name;
-            Version++;
         }
     }
 

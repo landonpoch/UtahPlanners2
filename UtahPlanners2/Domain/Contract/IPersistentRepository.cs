@@ -9,8 +9,8 @@ namespace UtahPlanners2.Domain.Contract
         where T : Aggregate
     {
         T Get(Guid id);
+        List<T> FindAll();
         List<T> Find(Func<T, bool> predicate);
-
         bool Save(T aggregate);
         bool Delete(Guid id);
     }

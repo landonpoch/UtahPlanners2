@@ -18,6 +18,14 @@ namespace UtahPlanners2.Application
             };
         }
 
+        public List<Lookup> Convert(List<Domain.Lookup> items)
+        {
+            var lookups = new List<Lookup>();
+            foreach (var item in items)
+                lookups.Add(Convert(item));
+            return lookups;
+        }
+
         public Domain.LookupType Convert(LookupType lt)
         {
             switch (lt)

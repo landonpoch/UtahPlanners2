@@ -7,6 +7,7 @@ using UtahPlanners2.Application;
 using UtahPlanners2.Application.Models.Commands;
 using UtahPlanners2.Application.Models.Queries;
 using UtahPlanners2.Domain.Contract;
+using UtahPlanners2.Infrastructure; // TODO: Initialize with DI
 
 namespace UtahPlanners2.Controllers
 {
@@ -18,20 +19,31 @@ namespace UtahPlanners2.Controllers
         public LookupController()
         {
             _mapper = new ApplicationMapper(); // TODO: Wire up DI
-            _lookupRepo = null; // TODO: Initialize with DI
+            _lookupRepo = new MongoPersistentRepository<Domain.Lookup>(); // TODO: Initialize with DI
         }
 
         public Lookup Get(string id)
         {
-            return new Lookup
-            {
-                Id = Guid.NewGuid(),
-                Type = LookupType.Property,
-                Description = "Stacked Flats"
-            };
+            var lookup = _lookupRepo.Get(new Guid(id));
+            return _mapper.Convert(lookup);
         }
 
-        public bool Put(CreateLookup createLookup)
+        //public CreateLookup GetCreateLookup(string id)
+        //{
+        //    return new CreateLookup
+        //    {
+        //        Type = LookupType.Property,
+        //        Description = "Stacked Flats"
+        //    };
+        //}
+
+        public IEnumerable<Lookup> Get()
+        {
+            var lookups = _lookupRepo.FindAll();
+            return _mapper.Convert(lookups);
+        }
+
+        public bool PutCreateLookup([FromBody]CreateLookup createLookup)
         {
             return ExecuteUnsafeOperation(createLookup, (resource) =>
             {
