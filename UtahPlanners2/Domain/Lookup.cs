@@ -14,7 +14,8 @@ namespace UtahPlanners2.Domain
 
     public class Lookup : Aggregate
     {
-        public Lookup(LookupType type, string description)
+        public Lookup(Guid id, LookupType type, string description)
+            :base(id)
         {
             Type = type;
             Description = description;
@@ -32,8 +33,8 @@ namespace UtahPlanners2.Domain
 
     public class WeightedLookup : Lookup
     {
-        public WeightedLookup(LookupType type, string description, int weight)
-            :base(type, description)
+        public WeightedLookup(Guid id, LookupType type, string description, int weight)
+            :base(id, type, description)
         {
             Weight = weight;
         }

@@ -46,19 +46,16 @@ namespace UtahPlanners2.Infrastructure
         public bool Save(T aggregate)
         {
             bool success = false;
-            if (aggregate.Id == Guid.Empty)
+            var existingAggregate = Get(aggregate.Id);
+            if (existingAggregate != null
+                && existingAggregate.Version == aggregate.Version)
             {
-                success = Collection.Insert(aggregate).Ok;
+                IncrementConcurrencyVersion(aggregate);
+                success = Collection.Update(Query<T>.EQ(a => a.Id, aggregate.Id), Update<T>.Replace(aggregate)).Ok;
             }
             else
             {
-                IncrementConcurrencyVersion(aggregate);
-                var optimisticConcurrencyQuery = Query.And(
-                    Query<T>.EQ(a => a.Id, aggregate.Id),
-                    Query<T>.EQ(a => a.Version, aggregate.Version - 1)
-                );
-
-                success = Collection.Update(optimisticConcurrencyQuery, Update<T>.Replace(aggregate)).Ok;
+                success = Collection.Insert(aggregate).Ok;
             }
             return success;
         }

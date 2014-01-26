@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace UtahPlanners2.Application.Models.Queries
+namespace UtahPlanners2.Application.Models
 {
     public enum LookupType
     {

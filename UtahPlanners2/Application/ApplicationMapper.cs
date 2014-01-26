@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using UtahPlanners2.Application.Models.Queries;
+using UtahPlanners2.Application.Models;
 
 namespace UtahPlanners2.Application
 {

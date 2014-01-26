@@ -80,17 +80,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Presentation\content\script\utils.js" />
     <Content Include="Presentation\content\style\default.css" />
     <Content Include="Presentation\Index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\ApplicationMapper.cs" />
-    <Compile Include="Application\Controllers\LookupController.cs" />
-    <Compile Include="Application\Models\Commands\CreateLookup.cs" />
-    <Compile Include="Application\Models\Commands\CreateWeightedLookup.cs" />
-    <Compile Include="Application\Models\Commands\RenameLookup.cs" />
-    <Compile Include="Application\Models\Queries\Lookup.cs" />
+    <Compile Include="Application\Controllers\LookupControllers.cs" />
+    <Compile Include="Application\Models\Lookup.cs" />
     <Compile Include="Domain\Aggregate.cs" />
     <Compile Include="Domain\Contract\IPersistentRepository.cs" />
     <Compile Include="Domain\Lookup.cs" />
@@ -112,7 +112,6 @@
   <ItemGroup>
     <Folder Include="Presentation\admin\" />
     <Folder Include="Presentation\content\img\" />
-    <Folder Include="Presentation\content\script\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

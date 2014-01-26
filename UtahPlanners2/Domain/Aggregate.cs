@@ -10,5 +10,10 @@ namespace UtahPlanners2.Domain
         public Guid Id { get; private set; }
 
         public int Version { get; private set; }
+
+        protected Aggregate(Guid id)
+        {
+            Id = id;
+        }
     }
 }

@@ -21,8 +21,8 @@ namespace UtahPlanners2
             );
 
             // JSON format by default with XML as an optional format based on header request
-            var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
-            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
+            //var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
+            //config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 
             // Serializes enums to text
             var jsonFormatter = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
