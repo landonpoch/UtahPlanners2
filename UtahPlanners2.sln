@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtahPlanners2", "UtahPlanners2\UtahPlanners2.csproj", "{D9457BB2-7970-4486-9372-8A13E276836E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtahPlanners2.Application", "UtahPlanners2.Application\UtahPlanners2.Application.csproj", "{D9457BB2-7970-4486-9372-8A13E276836E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtahPlanners2.Presentation", "UtahPlanners2.Presentation\UtahPlanners2.Presentation.csproj", "{1D40D7C2-2307-4057-8322-3CA24BD7E619}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{D9457BB2-7970-4486-9372-8A13E276836E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9457BB2-7970-4486-9372-8A13E276836E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9457BB2-7970-4486-9372-8A13E276836E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
