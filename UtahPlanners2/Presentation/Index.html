@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="utahPlannersApp">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="" />
@@ -7,14 +7,10 @@
     
     <title>@ViewBag.Title</title>
     <link href="content/style/default.css" rel="stylesheet" type="text/css" />
-    <link href="content/style/custom.css" rel="stylesheet" type="text/css" />
-    <!--@RenderSection("Head", false)-->
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="content/script/utils.js"></script>
 </head>
 
-<body>
+<body ng-controller="LookupListCtrl">
     
     <div id="wrapper">
 	    <div id="header">
@@ -53,6 +49,14 @@
             <div id="page-bgtop">
                 <!--@RenderBody()
                 @RenderSection("LeftNav", required: false)-->
+
+                <ul>
+                    <li ng-repeat="lookup in lookups">
+                        {{lookup.Description}}
+                        <p>{{lookup.snippet}}</p>
+                    </li>
+                </ul>
+
                 <div style="clear: both; height: 1px"></div>
             </div>
 	    </div>
@@ -64,9 +68,13 @@
 		<p id="links"><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
 	</div>
 
-    <script src="content/script/jquery-1.4.4.min.js" type="text/javascript"></script>
-    <script src="content/scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
-    <!--@RenderSection("Scripts", false)-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="content/script/angular/angular.js"></script>
+    <script type="text/javascript" src="content/script/angular/angular-route.js"></script>
+    <script type="text/javascript" src="content/script/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="content/script/main.js"></script>
+    <script type="text/javascript" src="content/script/controllers.js"></script>
+    <script type="text/javascript" src="content/script/services.js"></script>
 
 </body>
 </html>

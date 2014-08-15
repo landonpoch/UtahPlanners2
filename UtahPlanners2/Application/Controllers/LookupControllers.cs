@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks; // TODO: Initialize with DI
 using System.Web;
 using System.Web.Http;
 using UtahPlanners2.Application;
 using UtahPlanners2.Application.Models;
 using UtahPlanners2.Domain.Contract;
-using UtahPlanners2.Infrastructure; // TODO: Initialize with DI
+using UtahPlanners2.Infrastructure;
 
 namespace UtahPlanners2.Controllers
 {
@@ -52,32 +53,29 @@ namespace UtahPlanners2.Controllers
 
         public void Put(Lookup lookup)
         {
-            // TODO: this should run as an async task so that it is non-blocking
-            UpdateLookup(lookup);
+            Task.Run(() => UpdateLookup(lookup));
         }
 
         public void Patch(Lookup lookup)
         {
-            // TODO: this should run as an async task so that it is non-blocking
-            UpdateLookup(lookup);
+            Task.Run(() => UpdateLookup(lookup));
         }
 
         public void Delete(Lookup lookup)
         {
-            // TODO: this should run as an async task so that it is non-blocking
-            ExecuteUnsafeOperation(lookup, (l) =>
+            Task.Run(() => ExecuteUnsafeOperation(lookup, l =>
             {
                 var lookupType = _mapper.Convert(l.Type);
                 return _lookupRepo.Delete(l.Id);
-            });
+            }));
         }
 
         private bool UpdateLookup(Lookup lookup)
         {
-            return ExecuteUnsafeOperation(lookup, (l) =>
+            return ExecuteUnsafeOperation(lookup, l =>
             {
                 var lookupType = _mapper.Convert(l.Type);
-                return _lookupRepo.Save(new Domain.Lookup(l.Id, lookupType, l.Description));
+                return _lookupRepo.Save(new Domain.Lookup(l.Id, l.ETag, lookupType, l.Description));
             });
         }
     }

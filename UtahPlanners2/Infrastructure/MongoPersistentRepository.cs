@@ -47,16 +47,27 @@ namespace UtahPlanners2.Infrastructure
         {
             bool success = false;
             var existingAggregate = Get(aggregate.Id);
-            if (existingAggregate != null
-                && existingAggregate.Version == aggregate.Version)
+            
+            if (existingAggregate != null)
             {
-                IncrementConcurrencyVersion(aggregate);
-                success = Collection.Update(Query<T>.EQ(a => a.Id, aggregate.Id), Update<T>.Replace(aggregate)).Ok;
+                if (existingAggregate.Version == aggregate.Version)
+                {
+                    // Update
+                    IncrementConcurrencyVersion(aggregate);
+                    success = Collection.Update(Query<T>.EQ(a => a.Id, aggregate.Id), Update<T>.Replace(aggregate)).Ok;
+                }
+                else
+                {
+                    // optimistic concurrency exception
+                    // TODO: Figure out how to handle this in an eventually consistent way with the UI
+                }
             }
             else
             {
+                // Insert
                 success = Collection.Insert(aggregate).Ok;
             }
+
             return success;
         }
 

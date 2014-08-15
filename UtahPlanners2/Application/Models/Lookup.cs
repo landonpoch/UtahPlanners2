@@ -5,6 +5,11 @@ using System.Web;
 
 namespace UtahPlanners2.Application.Models
 {
+    public abstract class Resource
+    {
+        public int ETag { get; set; }
+    }
+
     public enum LookupType
     {
         Property,
@@ -12,7 +17,7 @@ namespace UtahPlanners2.Application.Models
         SocioEcon
     }
 
-    public class Lookup
+    public class Lookup : Resource
     {
         public Guid Id { get; set; }
         public LookupType Type { get; set; }

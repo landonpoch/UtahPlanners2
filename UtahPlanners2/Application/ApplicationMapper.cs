@@ -13,6 +13,7 @@ namespace UtahPlanners2.Application
             return new Lookup
             {
                 Id = l.Id,
+                ETag = l.Version,
                 Type = Convert(l.Type),
                 Description = l.Description
             };
