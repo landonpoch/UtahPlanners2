@@ -357,8 +357,11 @@
     <Content Include="scripts\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="scripts\angular\i18n\angular-locale_zu.js" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\adminController.js" />
     <Content Include="scripts\controllers\homeController.js" />
     <Content Include="scripts\controllers\navigationController.js" />
+    <Content Include="views\admin\lookups.html" />
+    <Content Include="views\admin\menu.html" />
     <Content Include="views\home.html" />
     <Content Include="Web.config" />
   </ItemGroup>
