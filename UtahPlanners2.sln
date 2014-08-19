@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtahPlanners2.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtahPlanners2.Presentation", "UtahPlanners2.Presentation\UtahPlanners2.Presentation.csproj", "{1D40D7C2-2307-4057-8322-3CA24BD7E619}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtahPlanners2.Web", "UtahPlanners2.Web\UtahPlanners2.Web.csproj", "{280AB174-8EDC-449C-B81F-BAE8C9F5F463}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D40D7C2-2307-4057-8322-3CA24BD7E619}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280AB174-8EDC-449C-B81F-BAE8C9F5F463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280AB174-8EDC-449C-B81F-BAE8C9F5F463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280AB174-8EDC-449C-B81F-BAE8C9F5F463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280AB174-8EDC-449C-B81F-BAE8C9F5F463}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
