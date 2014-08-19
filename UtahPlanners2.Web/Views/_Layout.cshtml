@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title ng-bind="title">@(PageData["title"] ?? "AngularJS SPA Template for Visual Studio")</title>
+    <title ng-bind="title">Utah Planners - A Project by Paul Anderson</title>
     <meta name="description" content="@PageData["description"]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     @Styles.Render("~/content/css/app")
@@ -22,10 +22,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="./" class="navbar-brand">Title <small>tagline</small></a>
+                <a href="./" class="navbar-brand">
+                    <div>UtahPlanners.com</div>
+                    <span class="navbar-tagline">A project by Paul Anderson</span>
+                </a>
             </div>
             <nav class="collapse navbar-collapse spa-navbar-collapse" role="navigation">
-                <ul class="nav navbar-nav">
+                <ul class="navbar-nav nav">
                     <li>
                         <a href="./contacts">Index</a>
                     </li>
@@ -41,7 +44,39 @@
     </header>
 
     <div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
-        @RenderBody()
+        <div class="col-md-3">
+            <ul class="nav nav-stacked">
+                <li class="nav-section">Condo Type</li>
+                <li>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#">Stacked Flats</a></li>
+                        <li><a href="#">Twin Homes</a></li>
+                        <li><a href="#">Townhomes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-section">Density</li>
+                <li>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#">Less than 10</a></li>
+                        <li><a href="#">10 to 13</a></li>
+                        <li><a href="#">14 to 16</a></li>
+                        <li><a href="#">17 to 20</a></li>
+                        <li><a href="#">More than 20</a></li>
+                    </ul>
+                </li>
+                <li class="nav-section">Local Services</li>
+                <li>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#">High</a></li>
+                        <li><a href="#">Medium</a></li>
+                        <li><a href="#">Low</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
