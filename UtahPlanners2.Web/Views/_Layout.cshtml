@@ -43,39 +43,42 @@
         </div>
     </header>
 
-    <div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
-        <div class="col-md-3">
-            <ul class="nav nav-stacked">
-                <li class="nav-section">Condo Type</li>
-                <li>
-                    <ul class="nav nav-stacked">
-                        <li><a href="#">Stacked Flats</a></li>
-                        <li><a href="#">Twin Homes</a></li>
-                        <li><a href="#">Townhomes</a></li>
-                    </ul>
-                </li>
-                <li class="nav-section">Density</li>
-                <li>
-                    <ul class="nav nav-stacked">
-                        <li><a href="#">Less than 10</a></li>
-                        <li><a href="#">10 to 13</a></li>
-                        <li><a href="#">14 to 16</a></li>
-                        <li><a href="#">17 to 20</a></li>
-                        <li><a href="#">More than 20</a></li>
-                    </ul>
-                </li>
-                <li class="nav-section">Local Services</li>
-                <li>
-                    <ul class="nav nav-stacked">
-                        <li><a href="#">High</a></li>
-                        <li><a href="#">Medium</a></li>
-                        <li><a href="#">Low</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-9">
-            @RenderBody()
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="nav nav-stacked">
+                    <li class="nav-section">Condo Type</li>
+                    <li>
+                        <ul class="nav nav-stacked">
+                            <li><a href="#">Stacked Flats</a></li>
+                            <li><a href="#">Twin Homes</a></li>
+                            <li><a href="#">Townhomes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">Density</li>
+                    <li>
+                        <ul class="nav nav-stacked">
+                            <li><a href="#">Less than 10</a></li>
+                            <li><a href="#">10 to 13</a></li>
+                            <li><a href="#">14 to 16</a></li>
+                            <li><a href="#">17 to 20</a></li>
+                            <li><a href="#">More than 20</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">Local Services</li>
+                    <li>
+                        <ul class="nav nav-stacked">
+                            <li><a href="#">High</a></li>
+                            <li><a href="#">Medium</a></li>
+                            <li><a href="#">Low</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="ui-view" class="col-md-9" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
+                    @RenderBody()
+            </div>
         </div>
     </div>
 

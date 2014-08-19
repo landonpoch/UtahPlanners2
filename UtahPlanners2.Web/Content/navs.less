@@ -1,5 +1,21 @@
 ﻿.nav-stacked {
+    > li {
+        padding: 9px 0px;
+        > a {
+            padding: 0px;
+            &:hover {
+                text-decoration: underline;
+                color: @brand-primary;
+                background-color: #fff;
+            }
+        }
+    }
     > li.nav-section {
         color: @nav-top-level-color;
+        border-bottom: 2px solid #EBEBEB;
+        margin: 0;
+        padding: 0;
+        font-size: 160%;
+        font-weight: normal;
     }
 }

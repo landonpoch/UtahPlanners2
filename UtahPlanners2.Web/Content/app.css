@@ -5962,8 +5962,24 @@ td.visible-print {
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
+.nav-stacked > li {
+  padding: 9px 0px;
+}
+.nav-stacked > li > a {
+  padding: 0px;
+}
+.nav-stacked > li > a:hover {
+  text-decoration: underline;
+  color: #ef8116;
+  background-color: #fff;
+}
 .nav-stacked > li.nav-section {
   color: #454e55;
+  border-bottom: 2px solid #EBEBEB;
+  margin: 0;
+  padding: 0;
+  font-size: 160%;
+  font-weight: normal;
 }
 .navbar-brand {
   font-family: Georgia, "Times New Roman", Times, serif;

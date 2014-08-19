@@ -135,6 +135,12 @@
       <DependentUpon>app.less</DependentUpon>
     </Content>
     <Content Include="Content\app.less" />
+    <Content Include="Content\navs.css">
+      <DependentUpon>navs.less</DependentUpon>
+    </Content>
+    <Content Include="Content\navs.min.css">
+      <DependentUpon>navs.less</DependentUpon>
+    </Content>
     <Content Include="Content\variables.css">
       <DependentUpon>variables.less</DependentUpon>
     </Content>
@@ -481,6 +487,7 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\navs.less" />
+    <Content Include="Content\navbar.less" />
     <None Include="Scripts\vendor\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.js" />
     <Content Include="Scripts\vendor\jquery-2.0.3.min.js" />
